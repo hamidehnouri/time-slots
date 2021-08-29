@@ -1,4 +1,4 @@
-import axios from "axios/dist/axios.min";
+import axios from "axios/dist/axios.min"
 import * as apiConfig from "api/apiConfig"
 
 class ApiService {
@@ -6,9 +6,9 @@ class ApiService {
     const config =
       method === apiConfig.POST
         ? { headers: { "Content-Type": "application/json" } }
-        : {};
+        : {}
     try {
-      const response = await axios[method](url, data, config);
+      const response = await axios[method](url, data, config)
       if (response && response.data) {
         return response.data
       } else {
@@ -22,4 +22,4 @@ class ApiService {
   }
 }
 
-export default new ApiService();
+export default new ApiService()

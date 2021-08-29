@@ -1,36 +1,37 @@
-import React, { useEffect } from "react"
-import companyApi from "api/companyApi"
-import Company from "components/Company"
+import React from "react"
+import Company from "components/company/Company"
+import Grid from '@material-ui/core/Grid'
+import Container from '@material-ui/core/Container'
+import { makeStyles } from '@material-ui/core/styles'
 
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme) => ({
+    container: {
+        padding: theme.spacing(3)
+    },
+}))
 
-const useStyles = makeStyles(() => ({
-    root: {
-        flexGrow: 1
+const Companies = ({ companies }) => {
+    const classes = useStyles()
+    const [selectedTimeSlots, setSelectedTimeSlots] = React.useState([])
+    const selectTimeSlots = (index) => (timeSlot) => {
+        let selectedArray = selectedTimeSlots.slice()
+        selectedArray[index]=timeSlot
+        setSelectedTimeSlots(selectedArray)
     }
-}));
-
-const Companies = () => {
-    const classes = useStyles();
-    const [companies, setCompanies] = React.useState([])
-    const getCompanies = async () => {
-        const result = await companyApi.getCompanies()
-        setCompanies(result)
-    }
-
-    useEffect(() => {
-        getCompanies()
-    }, [])
 
     return (
-        <div className={classes.root}>
+        <Container className={classes.container}>
             <Grid container spacing={3}>
-                {companies && companies.map(company => (
-                    <Company company={company} />
+                {companies && companies.map((company, index) => (
+                    <Company 
+                    company={company} 
+                    selectTimeSlots={selectTimeSlots(index)}
+                    selectedTimeSlots={selectedTimeSlots}
+                    key={`company_${company.name}`}
+                    />
                 ))}
             </Grid>
-        </div>
+        </Container>
     )
 }
 

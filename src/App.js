@@ -1,9 +1,14 @@
-import Companies from "components/Companies"
+import React from "react"
+import Body from "containers/Body"
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 function App() {
   return (
-    <Companies/>
-  );
+    <React.Fragment>
+      <CssBaseline />
+      <Body />
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default App
