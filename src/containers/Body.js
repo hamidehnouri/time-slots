@@ -6,7 +6,8 @@ const Body = () => {
     const [companies, setCompanies] = React.useState([])
     const getCompanies = async () => {
         const result = await companyApi.getCompanies()
-        setCompanies(result)
+        if (result.data) setCompanies(result.data)
+        else if (result.error) alert(result.error)
     }
 
     useEffect(() => {

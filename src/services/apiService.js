@@ -10,14 +10,14 @@ class ApiService {
         try {
             const response = await axios[method](url, data, config)
             if (response && response.data) {
-                return response.data
+                return { data: response.data }
             } else {
-                console.log("Response Error!")
-                return response
+                return { error: "Response Error!" }
             }
         } catch (error) {
-            console.log("Request Error!")
-            return error
+            return {
+                error: "Unable to handle request, check server connection!"
+            }
         }
     }
 }
