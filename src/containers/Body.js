@@ -13,9 +13,7 @@ const Body = () => {
         getCompanies()
     }, [])
 
-    return (
-        <Companies companies={companies} />
-    )
+    return <Companies companies={companies} />
 }
 
 export default Body

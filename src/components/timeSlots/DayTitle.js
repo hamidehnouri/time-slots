@@ -1,7 +1,7 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles'
-import ListSubheader from '@material-ui/core/ListSubheader'
-import Typography from '@material-ui/core/Typography'
+import { makeStyles } from "@material-ui/core/styles"
+import ListSubheader from "@material-ui/core/ListSubheader"
+import Typography from "@material-ui/core/Typography"
 
 import { WEEKDAYS } from "common/utils"
 
@@ -19,9 +19,7 @@ const DayTitle = ({ day }) => {
 
     return (
         <ListSubheader className={classes.listSubheader}>
-            <Typography variant="body1">
-                {title}
-            </Typography>
+            <Typography variant="body1">{title}</Typography>
         </ListSubheader>
     )
 }

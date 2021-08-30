@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ```sh
 # Clone the repository 
-git clone git@github.com:hamidehnouri/time-slots.git
+git clone https://github.com/hamidehnouri/time-slots.git
 cd time-slots
 # Install the dependencies
 npm install
