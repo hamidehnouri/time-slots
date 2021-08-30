@@ -21,7 +21,7 @@ npm install
 ```sh
 cd time-slots
 # Start JSON server at `localhost:8000` and serves data from timeSlots.json.
-json-server --watch data/timeSlots.json --port 8000
+npx json-server --watch data/timeSlots.json --port 8000
 ```
 
 ## 💣 Starting the project
